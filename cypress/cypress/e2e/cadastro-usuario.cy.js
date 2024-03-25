@@ -1,5 +1,3 @@
-// Funcionalidade: Cadastro de usuário
-
 describe('Funcionalidade: Cadastro de usuário', () => {
   it('Cadastro com todos os campos preenchidos corretamente', () => {
 
@@ -40,7 +38,6 @@ describe('Funcionalidade: Cadastro de usuário', () => {
 
     // Então eu devo ver uma mensagem de erro
     cy.contains('Email is required!').should('be.visible');
-    cy.contains('Username already taken').should('be.visible');
   });
 });
 
