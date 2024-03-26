@@ -101,12 +101,6 @@ Verifique se a interface do usuário é responsiva e funciona em diferentes tama
     E eu clico em "Login"
     Então eu devo ver uma mensagem de erro
 
-  Cenário: Login com um usuário que não existe
-    Dado que eu estou na página de login
-    Quando eu preencho o usuário "usuario_inexistente" e a senha "senha"
-    E eu clico em "Login"
-    Então eu devo ver uma mensagem de erro
-
   Cenário: Login com campos vazios
     Dado que eu estou na página de login
     Quando eu deixo os campos de usuário e senha vazios

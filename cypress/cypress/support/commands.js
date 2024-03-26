@@ -31,4 +31,21 @@ Cypress.Commands.add('login', (username, password) => {
     cy.get('[data-test="loginPassword"]').type(password);
 
     cy.get('button').contains('login').click();
-  });
+});
+  
+Cypress.Commands.add('createUser', (email, password, fullName, username) => {
+    cy.visit('http://localhost:4200/#/home');
+    cy.contains('a', 'Register now').click();
+
+    // Quando eu preencho todos os campos corretamente
+    cy.get('[data-test="email"]').type(email);
+    cy.get('[data-test="fullName"]').type(fullName);
+    cy.get('[data-test="registerUserName"]').type(username);    
+    cy.get('[data-test="registerPassword"]').type(password);
+
+    // E eu clico em "Cadastrar"
+    cy.contains('button', 'Register').click();
+
+    // Então eu devo ser redirecionado para a página de login
+    cy.visit('http://localhost:4200/#/home');
+});

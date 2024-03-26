@@ -115,22 +115,23 @@ describe('Cadastro', function() {
 
 /* O teste vai falhar por que o sistema permite emails repetidos, ou seja, um mesmo e-mail(que é unico por pessoa)
 pode ter várias contas cadastradas. Isso é um bug ? Achadinhos ! */
-// describe('Cadastro', function() {
-//   beforeEach(function() {
-//     // Prepare the application state
-//     // Here we assume that there is a command "createUser" that creates a user
-//     cy.createUser('email@exemplo.com', 'password');
-//     cy.visit('/cadastro');
-//   });
+describe('Cadastro', function() {
 
-//   it('Cadastro com um email que já está em uso', function() {
-//     // Input the email
-//     cy.get('input[name=email]').type('email@exemplo.com');
+  beforeEach(function() {
+    // Prepare the application state
+    // Here we assume that there is a command "createUser" that creates a user
+    cy.createUser('enmorais@exemplo.com', '12345678', 'elayne morais', 'enmorais'); 
+    cy.contains('a', 'Register now').click();
+  });
 
-//     // Click on "Register"
-//     cy.get('button').contains('Cadastrar').click();
+  it('Cadastro com um email que já está em uso', function() {
+    // Input the email
+    cy.get('[data-test="email"]').type('enmorais@exemplo.com');
 
-//     // Check for the error message
-//     cy.get('.error-message').should('contain', 'O email já está em uso');
-//   });
-// });
+    // Click on "Register"
+    cy.get('button').contains('Register').click();
+
+    // Check for the error message
+    cy.contains('O email já está em uso').should('be.visible');
+  });
+});
