@@ -15,10 +15,18 @@ Pegou-se uma aplicação já em produção e partir desta gerou-se cenários de 
 ## Menu
 
 - [Pré-requisitos](#pré-requisitos)
+- [Tecnologia](#tecnologia)
 - [Aplicação](#aplicação) 
 - [Cypress](#Cypress)
 - [Fluxo](#fluxo)
 - [Resultados](#resultados)
+
+## Tecnologia
+
+* Cypress
+* Angular
+* GitHub Copilot
+* Gherkin
 
 ## Pré-requisitos
   - Node 16.13.1
@@ -71,6 +79,9 @@ Com os cenários Gherkins validados, solicitata-se a IA, a implementação de te
 
 
 ![image](https://github.com/elayneargollo/cypress/assets/48841005/cfb7ac55-30ce-4a08-8404-379dc3e034e5)
+
+
+
 
 
 
